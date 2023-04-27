@@ -10,4 +10,4 @@ do
     fi
     b=$((b - 1))
 done
-i=$b
+b=$b

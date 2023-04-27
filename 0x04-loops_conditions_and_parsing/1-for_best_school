@@ -5,4 +5,4 @@ for b in {1..10}
 do
     echo "Best School"
 done
-i=$b
+b=$b

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script displays "Best School" 1-20 with iteration at the 4th, 9th and 17th loop
-i=b
+b=b
 while [ "$b" -le 20 ]
 do
     echo "$b"
@@ -18,4 +18,4 @@ do
 
     b=$((b + 1))
 done
-i=$b
+b=$b
