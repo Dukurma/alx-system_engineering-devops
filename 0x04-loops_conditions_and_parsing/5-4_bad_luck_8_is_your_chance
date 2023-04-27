@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script displays "Best School" with an iteration on 4th and 8th loop 
+b=1
+while [ "$b" -le 10 ]
+do
+    if [ "$b" -eq 4 ]
+    then
+        echo "bad luck"
+    elif [ "$b" -eq 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    b=$((b + 1))
+done
+i=$b
+

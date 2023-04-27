@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script displays "time"
+b=1
+t=0
+while [ "$t" -le 12 ]
+do
+    echo "Hour: $t"
+    b=1
+    while [ "$b" -le 59 ]
+    do
+        echo "$b"
+	b=$((b + 1))
+    done
+    t=$((t + 1))
+done
+b=$b

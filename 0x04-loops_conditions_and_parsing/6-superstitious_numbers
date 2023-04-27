@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script displays "Best School" 1-20 with iteration at the 4th, 9th and 17th loop
+i=b
+while [ "$b" -le 20 ]
+do
+    echo "$b"
+    case $b in
+        4)
+	echo "bad luck from China"
+        ;;
+        9)
+	echo "bad luck from Japan"
+        ;;
+        17)
+	echo "bad luck from Italy"
+        ;;
+    esac
+
+    b=$((b + 1))
+done
+i=$b

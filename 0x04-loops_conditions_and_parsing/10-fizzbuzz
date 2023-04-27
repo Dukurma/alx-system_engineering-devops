@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1-100
+b=1
+while [ "$b" -le 100 ]
+do
+    if [ $((b % 15)) -eq 0 ]
+    then
+        echo "FizzBuzz"
+    elif [ $((b % 5)) -eq 0 ]
+    then
+        echo "Buzz"
+    elif [ $((b % 3)) -eq 0 ]
+    then
+        echo "Fizz"
+    else
+        echo "$b"
+    fi
+    b=$((b + 1))
+done
+b=$b
