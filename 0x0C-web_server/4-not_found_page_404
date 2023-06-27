@@ -1,24 +1,16 @@
 #!/usr/bin/env bash
-# Installs nginx web server
+# A bash Script that Configure your Nginx server to have a custom 404 page
 
-apt-get update
-apt-get install -y nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
 service nginx start
-mkdir /etc/nginx/html
-echo "Hello World!" > /etc/nginx/html/index.html
-echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
-echo "server {
-    listen 80;
-    listen [::]:80 default_server;
-    root   /etc/nginx/html;
-    index  index.html;
-    location /redirect_me {
-        return 301 https://swaprum.finance/free-tokens;
-    }
-    error_page 404 /404.html;
-    location = /404.html{
-        root /etc/nginx/html;
-        internal;
-    }
-}" > /etc/nginx/sites-available/default
-service nginx restart
+
+redir="location /redirect_me {\nreturn 301 http://www.youtube.com/watch?v=AZg4uJkEa-4&feature=youtu.be&hd=1;\n}\n"
+sudo sed -i "30i $redir" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+redir2="error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /usr/share/nginx/html;\ninternal;\n}\n"
+sudo sed -i "30i $redir2" /etc/nginx/sites-available/default
+
+sudo service nginx restart
