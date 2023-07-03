@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# A bash script that configures a brand new Ubuntu machine to the asked requirements
+#to configure a new server
 
-sudo apt-get -y update
+sudo apt-get update
 sudo apt-get -y install nginx
-
-sudo sed -i "21i add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
-
+sudo service nginx start
+sudo sed -i "11i\\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+echo "Hello World!" | sudo tee /usr/share/nginx/html/index.html
 sudo service nginx restart
