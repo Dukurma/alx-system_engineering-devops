@@ -7,8 +7,7 @@
  
  sudo touch /var/www/html/index.html
  sudo bash -c 'cat > /var/www/html/index.html << EOF
- Hello World!
- EOF'
+ Hello World!'
  
  # shellcheck disable=SC2154
  sudo sed -i "/^\s*server_name _;/a \ \ \ \ \ \ \ \ add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
