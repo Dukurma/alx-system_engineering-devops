@@ -316,5 +316,5 @@ GitHub repository: alx-system_engineering-devops
 Directory: 0x14-mysql
 File: 5-mysql_backup
 
-Copyright © 2023 DUKURMA, All rights reserved.
+Copyright ©  2023 DUKURMA, All rights reserved.
 
